@@ -4,7 +4,7 @@ SQL-based analysis of the Chinook digital media store using Google BigQuery. Foc
 # 🎵 Chinook Music Store Data Analysis
 
 ## 📌 Project Overview
-This project involves a comprehensive analysis of the **Chinook Database**, which represents a digital media store (similar to iTunes). The goal was to act as a Data Analyst helping the Chinook team understand their market performance, customer behavior, and inventory composition.
+This project involves a comprehensive analysis of the **Chinook Database**, representing a digital media store. The goal was to act as a Data Analyst helping the Chinook team understand their market performance, customer behavior, and inventory composition.
 
 The analysis was performed using **SQL** in **Google BigQuery**, utilizing advanced techniques to extract actionable business insights.
 
@@ -13,29 +13,37 @@ The analysis was performed using **SQL** in **Google BigQuery**, utilizing advan
 * **Platform:** Google BigQuery.
 * **SQL Skills Demonstrated:**
     * **Aggregations:** `SUM`, `COUNT`, `AVG` to calculate revenue and statistics.
-    * **Joins:** Complex `JOIN` (Inner/Left) across 4+ tables to link sales to specific genres and artists.
+    * **Joins:** Complex `JOIN` (Inner/Left) across 4+ tables.
     * **Window Functions:** `RANK()` and `PARTITION BY` for category-specific rankings.
-    * **Subqueries & CTEs:** For multi-step logical filtering.
+    * **Date Functions:** `EXTRACT(YEAR from ...)` for time-series analysis.
 
 ## 📊 Key Business Insights
 
-### 1. 🌍 Market & Geography Analysis
+### 1. 📈 Sales & Employee Performance
+* **Top Salesperson:** **Jane Peacock** is the leading employee, generating **$833.04** in revenue across 146 separate sales. She outperforms the runner-up, Margaret Park ($775.40), by approximately 7.4%.
+* **Sales Dynamics:** We analyzed the yearly revenue trends to determine if the business is growing or contracting. *(See visualization in `images/sales_dynamics.png`)*.
+* **Team Structure:** The sales team is highly competitive, with all top 3 agents generating over $700 each in revenue.
+
+### 2. 🌍 Market & Geography Analysis
 * **Top Countries by Activity:** The **USA** is the largest market by volume (91 invoices), followed by **Canada** (56) and **Brazil** (35).
-* **Top Revenue City:** **Prague** is the highest-grossing city ($90.24 revenue), making it the ideal location for the proposed promotional music festival.
+* **Top Revenue City:** **Prague** is the highest-grossing city ($90.24 revenue), identifying it as a prime location for promotional events.
 * **Global Revenue Leaders:** While the USA leads in volume, **France** and **Brazil** remain critical secondary markets based on total revenue generation.
 
-### 2. 👥 Customer Analysis
+### 3. 👥 Customer Analysis
 * **Top Global Customer:** The customer with the highest lifetime value is **Helena Holý**, with a total spend of **$49.62**.
-* **Super-Fan Analysis:** By analyzing artist-specific spending, we identified **Mark Taylor** as the top supporter of the store's leading band (*Iron Maiden*), having spent **$17.82** on their tracks alone.
-* **Customer Segmentation:** We successfully generated targeted lists of Rock music listeners for email marketing campaigns.
+* **Super-Fan Analysis:** By analyzing artist-specific spending, we identified **Mark Taylor** as the top supporter of *Iron Maiden*, having spent **$17.82** on their tracks alone.
 
-### 3.  Inventory & Product Analysis
-* **Dominant Genre:** **Rock** is the primary revenue driver ($826.65), significantly outperforming the second-place genre, Latin ($382.14).
-* **Artist Inventory:** **Iron Maiden** has the largest catalog presence with **204 tracks**, followed by Led Zeppelin (114) and Metallica (112).
-* **Content Outliers:** The analysis identified tracks significantly longer than the average, such as *"Occupation / Precipice"* (approx. 88 minutes), which helps in curating specialized "Long-Form" playlists.
+### 4. 🎸 Inventory & Product Analysis
+* **Dominant Genres (Top 5 by Revenue):**
+    1.  **Rock:** $826.65 (Market Leader)
+    2.  **Latin:** $382.14
+    3.  **Metal:** $261.36
+    4.  **Alternative & Punk:** $241.56
+    5.  **TV Shows:** $93.53
+* **Inventory Insight:** Rock and Latin music account for the vast majority of store revenue, suggesting that marketing efforts should focus heavily on these two genres.
 
-##  SQL Code Example
-*Below is an example of an advanced query used in this project to find the most popular genre for each country using Window Functions:*
+## 💻 SQL Code Example
+*Below is an example of an advanced query used to find the most popular genre for each country using Window Functions:*
 
 ```sql
 /* Goal: Return each country along with its top-selling Genre.
