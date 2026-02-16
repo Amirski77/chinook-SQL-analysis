@@ -21,7 +21,7 @@ The analysis was performed using **SQL** in **Google BigQuery**, utilizing advan
 
 ### 1. 📈 Sales & Employee Performance
 * **Top Salesperson:** **Jane Peacock** is the leading employee, generating **$833.04** in revenue across 146 separate sales. She outperforms the runner-up, Margaret Park ($775.40), by approximately 7.4%.
-* **Sales Dynamics:** We analyzed the yearly revenue trends to determine if the business is growing or contracting. *(See visualization in `TotalRevenue by YEAR.png`)*.
+* **Sales Dynamics:** We analyzed the yearly revenue trends to determine if the business is growing or contracting. *(See visualization in `TSales Dynamics by Year.png`)*.
 * **Team Structure:** The sales team is highly competitive, with all top 3 agents generating over $700 each in revenue.
 
 ### 2. 🌍 Market & Geography Analysis
